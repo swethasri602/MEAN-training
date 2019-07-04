@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Searching an element</title>
+</head>
+<body>
+	<h1>SEARCHING AN ELEMENT IN ARRAY</h1>
+	<script type="text/javascript">
+		function SearchElement(arr,key){
+       
+            var result;
+            var a=arr.length;
+            for(i=0;i<a;i++)
+           {
+             if (arr[i]==key)
+          {
+            return true;
+            break;
+     }
+   }
+}
+        var data=[10,500,45,55,4567];
+        var key=55;
+        if(SearchElement(data,key))
+      {
+         console.log('The number '+ key +' is present is an array') ;
+      }	
+        else{
+     
+        console.log("The number "+ key+" is not present in an array");
+    }
+
+</script>
+		
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Maximum element</title>
+</head>
+<body>
+	<h1>MAXIMUM ELEMENT OF AN ARRAY</h1>
+	<script type="text/javascript">
+	
+		function maximumelement(val){
+		var a=val[0];
+		for(i=1;i<val.length;i++){
+			if(a<val[i]){
+				a=val[i];
+			}
+		}
+		return a;
+	}
+	data=[100,30,40,300,250];
+	res=maximumelement(data);
+    console.log('The maximum element of an array is',res);
+</script>
+
+
+
+
+		
+
+		
+
+
+
+
+</body>
+</html>
