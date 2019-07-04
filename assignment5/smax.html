@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To find maximum and second maximum</title>
+</head>
+<body>
+          <h1>MAXIMUM AND SECOND MAXIMUM</h1>
+          <script type="text/javascript">
+          var arr = [40,279,2,37,120,1]
+          var a=0;
+          var b=0;
+
+        for(i=0;i<arr.length;i++){
+            if(arr[i]>b){
+               a=b;
+               b=arr[i];
+  }
+        else if(arr[i]>a&&arr[i]!=b){
+        a=arr[i];
+  }
+  }
+  console.log(b);
+  console.log(a);
+
+
+
+</script>
+
+</body>
+</html>
