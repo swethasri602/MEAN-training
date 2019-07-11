@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To Do List</title>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<body>
+<div>
+ <div class="jumbotron">
+<center>
+<br><br><br>
+<h1><B>PHONE BOOK <span class="glyphicon glyphicon-edit"></span></B></h1>
+<br><br>
+<span class="glyphicon glyphicon-user"></span><B> NAME:</B><input type="text" id="name" placeholder="Enter your name">
+<br><br>
+<span class="glyphicon glyphicon-phone"></span><b>MOBILE NO:</B><input type="text" id="mob" placeholder="Enter your mob no">
+<br><br>
+<button id='submit' onclick="addToDo()" class="btn btn-info">Submit</button>
+
+</center>
+</div>
+<center><div id="result"   style="background-color:blue;"><h2><B>PHONE BOOK DETAILS</B></h2></div></center>
+</b>
+</div>
+<script type="text/javascript">
+var todolist = [];
+var name;
+var mobile;
+
+function phonebook(name,mobile)
+{
+this.name=name;
+this.mobile=mobile;
+}
+function validateData(ref){
+if (ref.name =="")
+{
+alert("Please enter your name ");
+document.getElementById("name").focus();
+return false;
+}
+if (ref.mobile =="")
+{
+alert("Please enter your mobile number ");
+document.getElementById("mobile").focus();
+return false;
+}
+}
+function addToDo()
+{
+var name = document.getElementById("name").value;
+var mobile = document.getElementById("mob").value;
+//creating customer object
+var ref = new phonebook(name,mobile);
+var status = validateData(ref);
+if (status ==false)
+return;
+var index = todolist.push(ref);
+console.log('index ',index);
+console.log(todolist);
+displayToDo(index,ref);
+}
+function displayToDo(index,ref){
+var result = '';
+var outerdiv = document.getElementById("result");
+var tododiv = document.createElement("div");
+var todospan = document.createElement("input");
+var todomob = document.createElement("input");
